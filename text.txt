@@ -1,0 +1,30 @@
+{
+    "version": "0.4.2",
+    "configurations": [
+        {
+            "name": "Debug gdb",
+            "type": "gdb",
+            //"request": "attach",
+            "request": "launch",
+            "executable": "${workspaceRoot}/bin/debug.elf",
+            "target": "bin/debug.elf",
+           // "target": "localhost:3333",
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "/usr/bin/arm-none-eabi-gdb",
+            "remote": true,
+            "preLaunchTask": "Debug",
+            "showDevDebugOutput": true,
+            "autorun": [
+                "target extended-remote localhost:3333",
+                "monitor halt",
+                "monitor reset halt",
+                "file bin/debug.elf",
+                "load bin/debug.elf",
+               // "tbreak main",
+               // "monitor reset",
+                //"monitor halt",
+
+            ]            
+        }
+    ]
+}
