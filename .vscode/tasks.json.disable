@@ -1,0 +1,61 @@
+{
+    "version": "0.1.0",
+    "cwd": "${workspaceRoot}",
+    //"_runner": "terminal",
+    "tasks": [
+        {
+            "taskName": "Release",
+            "command": "make",
+            "isShellCommand": true,
+            "showOutput": "always",
+            "args": ["TARGET = release"],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "taskName": "Debug",
+            "command": "make",
+            "isBuildCommand": true,
+            "isShellCommand": true,
+            "showOutput": "always",
+            "args": ["TARGET = debug"],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "taskName": "Clean",
+            "command": "make",
+            "showOutput": "always",
+            "args": ["clean"]
+            
+        },
+         {
+            "isBackground": true,
+            "taskName": "St-Util",
+            "command": "./.vscode/debug.sh",
+            "showOutput": "always",
+            "args": [""]
+            
+        }
+    ]
+}

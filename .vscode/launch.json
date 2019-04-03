@@ -1,0 +1,62 @@
+/*
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++ Attach",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceRoot}/bin/debug.elf",
+      "args": ["-nx -f -quiet"],
+      "MIMode": "gdb",
+      "externalConsole":"false",
+      "stopAtEntry": true,
+      "preLaunchTask": "Debug",
+      "launchCompleteCommand": "None",
+      "miDebuggerPath": "/usr/bin/arm-none-eabi-gdb",
+      "cwd": ".",
+      "targetArchitecture": "arm",
+      "logging" : { "trace": true, "traceResponse": true, "engineLogging": true },
+      "customLaunchSetupCommands":[
+     // "setupCommands": [       
+                {"text": "tar extended-remote :3333"},
+                {"text": "monitor reset halt"},
+                {"text": "monitor reset"},
+                 {"text": "monitor halt"},
+                {"text": "file '${workspaceRoot}/bin/debug.elf'"},
+                {"text": "load"},
+                {"text": "monitor reset halt"},
+                {"text": "set logging on"}
+                {"text": "continue"}
+      ],
+
+    }
+  ]
+}
+
+*/
+{
+    "version": "0.4.2",
+    "configurations": [
+        {
+            "name": "Debug gdb",
+            "type": "gdb",
+            "request": "launch",
+            "target": "${workspaceRoot}/bin/debug.elf",
+           "args": ["-nx -f -quiet"],
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "/usr/bin/arm-none-eabi-gdb",
+            "preLaunchTask": "Debug",
+           //"showDevDebugOutput": true,
+            "autorun": [
+                "tar extended-remote :3333",
+                "monitor reset halt",
+                 "file '${workspaceRoot}/bin/debug.elf",
+                 "load",
+                 "monitor reset halt",
+                 "set logging on",
+                 "continue"
+            ]            
+        }
+    ]
+}

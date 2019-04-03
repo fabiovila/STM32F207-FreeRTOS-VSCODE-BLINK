@@ -1,0 +1,51 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/arm-none-eabi/include",
+                "/usr/arm-none-eabi/include/c++/7.2.0",
+                "/usr/arm-none-eabi/include/machine",
+                "/usr/arm-none-eabi/include/sys",
+                "${workspaceRoot}",
+                "${workspaceFolder}",
+                "${workspaceRoot}/Inc"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/arm-none-eabi/include",
+                    "/usr/arm-none-eabi/include/c++/7.2.0",
+                    "/usr/arm-none-eabi/include/machine",
+                    "/usr/arm-none-eabi/include/sys",
+                    "${workspaceRoot}",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}

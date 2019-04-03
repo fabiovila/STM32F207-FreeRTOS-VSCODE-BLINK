@@ -1,0 +1,61 @@
+{
+	"skipTerminateQuickPick": true,
+	"skipSwitchToOutput": false,
+	"skipErrorMessage": true,
+	"commands": [
+		{
+			"text": "| Rebuild all |",
+			"tooltip": "Debug code",
+			"color": "red",
+			"command": "make rebuild",
+			"alignment": "left",
+			"skipTerminateQuickPick": false,
+			"priority": 0
+		},
+		{
+			"text": "| Build Release |",
+			"tooltip": "Compile release target",
+			"color": "yellow",
+			"command": "make TARGET=release",
+			"alignment": "left",
+			"skipTerminateQuickPick": false,
+			"priority": 0
+		},
+		{
+			"text": "| Build Debug |",
+			"tooltip": "Debug code",
+			"color": "darkblue",
+			"command": "make TARGET=debug",
+			"alignment": "left",
+			"skipTerminateQuickPick": false,
+			"priority": 0
+		},
+		{
+			"text": "| Flash MCU |",
+			"tooltip": "Flash to STM32",
+			"color": "white",
+			"command": "make TARGET=release flash",
+			"alignment": "left",
+			"skipTerminateQuickPick": false,
+			"priority": 0
+		},
+		{
+			"text": "| Launch Debug Server |",
+			"tooltip": "Launch",
+			"color": "white",
+			"command": "./.vscode/debug.sh",
+			"alignment": "left",
+			"skipTerminateQuickPick": false,
+			"priority": 0
+		},
+		{
+			"text": "| CLEAN |",
+			"tooltip": "Clean files",
+			"color": "red",
+			"command": "make clean",
+			"alignment": "left",
+			"skipTerminateQuickPick": false,
+			"priority": 0
+		}
+	]
+}
